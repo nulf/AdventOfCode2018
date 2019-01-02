@@ -2,10 +2,13 @@
 # Solution for advent of code 2018 01/12 puzzle 1
 #
 
+
 # Read the input file as a list
-input_file = open('input.txt', 'r')
-input_frequencies = input_file.read().splitlines()
-input_file.close()
+def read_input_file():
+    input_file = open('input.txt', 'r')
+    input_frequencies = input_file.read().splitlines()
+    input_file.close()
+    return input_frequencies
 
 
 # Loop through all values in the list, if it's a positive value add it, otherwise subtract it
@@ -13,13 +16,16 @@ input_file.close()
 calculated_frequency = 0
 first_frequency_crunched_twice = None
 crunched_frequencies = []
+input_frequencies = read_input_file()
 
-for input_frequency in input_frequencies:
-    calculated_frequency = eval('calculated_frequency + int(input_frequency)')
-    crunched_frequencies.append(calculated_frequency)
-    if first_frequency_crunched_twice is None:
-        if calculated_frequency in crunched_frequencies:
-            first_frequency_crunched_twice = calculated_frequency
+while first_frequency_crunched_twice is None:
+    for input_frequency in input_frequencies:
+        if first_frequency_crunched_twice is None:
+            if calculated_frequency in crunched_frequencies:
+                first_frequency_crunched_twice = calculated_frequency
+        crunched_frequencies.append(calculated_frequency)
+        calculated_frequency = eval('calculated_frequency + int(input_frequency)')
+    input_frequencies = read_input_file()
 
 # Output resulting frequency
 print("The resulting frequency is : {}".format(calculated_frequency))
