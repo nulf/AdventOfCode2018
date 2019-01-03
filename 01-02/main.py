@@ -1,5 +1,5 @@
 #
-# Solution for advent of code 2018 01/12 puzzle 1
+# Solution for advent of code 2018 01/12 part 2
 #
 
 
