@@ -2,6 +2,8 @@
 # Solution for advent of code 2018 02/12 part 1
 #
 
+import difflib
+
 
 # Function for reading the input file as a list
 def read_input_file():
@@ -17,7 +19,6 @@ box_ids = read_input_file()
 
 # Loop through all box ID's
 for box_id in box_ids:
-    for character in box_id:
 
-        # Holds the amount of characters of a certain type in box_id
-        amount_of_that_character = box_id.count(character)
+    # Get diff between the current and previous string
+    difflib.ndiff()
