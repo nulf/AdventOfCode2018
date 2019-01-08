@@ -16,9 +16,13 @@ def read_input_file():
 # Read input file with box ID's
 box_ids = read_input_file()
 
+# List of previous box ID's
+read_box_ids = []
 
 # Loop through all box ID's
 for box_id in box_ids:
+    read_box_ids.append(box_id)
 
-    # Get diff between the current and previous string
-    difflib.ndiff()
+    # Get diff between the current and all previous box ID's
+    for read_box_id in read_box_ids:
+        print(difflib.ndiff(box_id, read_box_id))
