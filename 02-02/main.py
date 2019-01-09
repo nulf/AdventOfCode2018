@@ -26,3 +26,5 @@ for box_id in box_ids:
     # Get diff between the current and all previous box ID's
     for read_box_id in read_box_ids:
         print(difflib.ndiff(box_id, read_box_id))
+
+        # Check if diff is exactly one letter
