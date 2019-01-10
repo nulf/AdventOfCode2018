@@ -21,10 +21,12 @@ read_box_ids = []
 
 # Loop through all box ID's
 for box_id in box_ids:
-    read_box_ids.append(box_id)
 
     # Get diff between the current and all previous box ID's
     for read_box_id in read_box_ids:
-        print(difflib.ndiff(box_id, read_box_id))
+        print("\n".join(difflib.ndiff(box_id, read_box_id)))
 
         # Check if diff is exactly one letter
+
+    # Add     
+    read_box_ids.append(box_id)
